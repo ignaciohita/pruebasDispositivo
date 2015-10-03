@@ -1,0 +1,33 @@
+{
+    "name": "pruebasDispositivo",
+    "version": "1.0.0",
+    "description": "Ejemplo del libro: un sistema para consultar las características del sistema y probar funcionalidades básicas",
+    "author": "Jose Ignacio Hita Barraza <ignaciohita@gmail.com>",
+    "contributors": [
+        {
+            "name": "Jose Ignacio Hita Barraza",
+            "email": "ignaciohita@gmail.com"
+    }
+  ],
+    "scripts": {
+        "test": "cordova serve",
+        "predeploy": "cordova prepare"
+    },
+    "main": "www/index.html",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/ignaciohita/pruebasDispositivo.git"
+    },
+    "bugs": {
+        "url": "https://github.com/ignaciohita/pruebasDispositivo/issues"
+    },
+    "keywords": [
+    "cordova",
+    "example",
+    "teaching"
+  ],
+    "dependencies": {},
+    "preferGlobal": true,
+    "private": false,
+    "license": "MIT"
+}
