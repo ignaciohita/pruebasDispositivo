@@ -12,6 +12,8 @@ function dispositivoListo() {
 
     registrarEvento("deviceready");
 
+    document.getElementById("infoDispositivo").innerHTML = " - Cordova: " + device.cordova + "<br> - Model: " + device.model + "<br> - Platform: " + device.platform + "<br> - UUID: " + device.uuid;
+
     document.addEventListener("batterystatus", function (info) {
         document.getElementById("infoBateria").innerHTML = " - Nivel aceptable: " + info.level;
 
