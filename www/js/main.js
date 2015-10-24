@@ -1,4 +1,4 @@
-/*global device*/
+/*global device, bateria*/
 var nombreUsuario;
 
 function registrarEvento(evento) {
@@ -22,6 +22,12 @@ function dispositivoListo() {
     "use strict";
 
     registrarEvento("deviceready");
+
+    bateria.obtenerNivelBateria(function (e) {
+        document.getElementById("infoBateria").innerHTML = " - Nivel actual: " + e;
+    }, function (e) {
+        document.getElementById("infoBateria").innerHTML = " - Nivel de batería desconocido";
+    });
 
     document.getElementById("infoDispositivo").innerHTML = " - Cordova: " + device.cordova + "<br> - Model: " + device.model + "<br> - Platform: " + device.platform + "<br> - UUID: " + device.uuid;
 
