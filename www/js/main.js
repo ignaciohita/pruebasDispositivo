@@ -1,4 +1,4 @@
-/*global cordova, Blob, device, Connection*/
+/*global cordova, Blob, device, Connection, bateria*/
 var cadenaRegistro = "";
 
 function registrarEvento(evento) {
@@ -107,6 +107,13 @@ function dispositivoListo() {
 
     cadenaRegistro += "Información dispositivo:\n - Cordova: " + device.cordova + "\n - Model: " + device.model + "\n - Platform: " + device.platform + "\n - UUID: " + device.uuid + "\n";
     document.getElementById("infoDispositivo").innerHTML = " - Cordova: " + device.cordova + "<br> - Model: " + device.model + "<br> - Platform: " + device.platform + "<br> - UUID: " + device.uuid;
+
+    bateria.obtenerNivelBateria(function (e) {
+        cadenaRegistro += "Nivel de batería actual: " + e.nivelBateria + "\n";
+        document.getElementById("infoBateria").innerHTML = " - Nivel actual: " + e.nivelBateria;
+    }, function (e) {
+        document.getElementById("infoBateria").innerHTML = " - Nivel de batería desconocido";
+    });
 
     document.addEventListener("batterystatus", function (info) {
         cadenaRegistro += "Nivel de batería aceptable: " + info.level + "\n";
