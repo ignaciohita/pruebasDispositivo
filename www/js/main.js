@@ -23,6 +23,50 @@ function dispositivoListo() {
 
     registrarEvento("deviceready");
 
+    document.getElementById("infoGlobalizacion").innerHTML = "";
+
+    navigator.globalization.getPreferredLanguage(function (idioma) {
+        document.getElementById("infoGlobalizacion").innerHTML += "Idioma preferido: " + idioma.value + "<br>";
+    }, function () {
+        document.getElementById("infoGlobalizacion").innerHTML += "Idioma preferido no disponible<br>";
+    });
+
+    navigator.globalization.getLocaleName(function (idioma) {
+        document.getElementById("infoGlobalizacion").innerHTML += "Idioma local: " + idioma.value + "<br>";
+    }, function () {
+        document.getElementById("infoGlobalizacion").innerHTML += "Idioma local no disponible<br>";
+    });
+
+    navigator.globalization.getDatePattern(function (patronFecha) {
+        document.getElementById("infoGlobalizacion").innerHTML += "Patrón de fecha: " + patronFecha.pattern + "<br>";
+    }, function () {
+        document.getElementById("infoGlobalizacion").innerHTML += "Patrón de fecha no disponible<br>";
+    });
+
+    navigator.globalization.dateToString(new Date(), function (cadenaFecha) {
+        document.getElementById("infoGlobalizacion").innerHTML += "Fecha: " + cadenaFecha.value + "<br>";
+    }, function () {
+        document.getElementById("infoGlobalizacion").innerHTML += "Fecha no disponible<br>";
+    });
+
+    navigator.globalization.getNumberPattern(function (patronNumero) {
+        document.getElementById("infoGlobalizacion").innerHTML += "Patrón de número: " + patronNumero.pattern + "<br>";
+    }, function () {
+        document.getElementById("infoGlobalizacion").innerHTML += "Patrón de número no disponible<br>";
+    });
+
+    navigator.globalization.numberToString(1234567.89, function (cadenaNumero) {
+        document.getElementById("infoGlobalizacion").innerHTML += "Número: " + cadenaNumero.value + "<br>";
+    }, function () {
+        document.getElementById("infoGlobalizacion").innerHTML += "Número no disponible<br>";
+    });
+
+    navigator.globalization.getCurrencyPattern("EUR", function (patronMoneda) {
+        document.getElementById("infoGlobalizacion").innerHTML += "Patrón de moneda: " + patronMoneda.pattern + "<br>";
+    }, function () {
+        document.getElementById("infoGlobalizacion").innerHTML += "Patrón de moneda no disponible<br>";
+    });
+
     if (navigator.connection.type === Connection.NONE) {
         document.getElementById("infoConexion").innerHTML = "Dispositivo desconectado.";
     } else {
