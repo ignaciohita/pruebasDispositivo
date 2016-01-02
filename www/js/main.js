@@ -1,4 +1,4 @@
-/*global device*/
+/*global device, Connection*/
 var nombreUsuario;
 
 function registrarEvento(evento) {
@@ -22,6 +22,12 @@ function dispositivoListo() {
     "use strict";
 
     registrarEvento("deviceready");
+
+    if (navigator.connection.type === Connection.NONE) {
+        document.getElementById("infoConexion").innerHTML = "Dispositivo desconectado.";
+    } else {
+        document.getElementById("infoConexion").innerHTML = "Dispositivo conectado con red: " + navigator.connection.type;
+    }
 
     document.getElementById("infoDispositivo").innerHTML = " - Cordova: " + device.cordova + "<br> - Model: " + device.model + "<br> - Platform: " + device.platform + "<br> - UUID: " + device.uuid;
 
