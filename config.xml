@@ -8,6 +8,7 @@
         <plugin name="cordova-plugin-battery-status" spec="1.1.0" />
         <plugin name="cordova-plugin-device" spec="1.1.0" />
         <plugin name="cordova-plugin-dialogs" spec="1.2.0" />
+        <plugin name="cordova-plugin-file" spec="3.0.0" />
         <plugin name="cordova-plugin-globalization" spec="1.0.2" />
         <plugin name="cordova-plugin-network-information" spec="1.1.0" />
 
