@@ -13,11 +13,24 @@
         <plugin name="cordova-plugin-network-information" spec="1.1.0" />
         <plugin name="pro.hita.nivelBateria" spec="1.0.0" />
 
+        <icon src="www/img/icon/icon144x144.png" />
+
         <platform name="android">
             <allow-intent href="market:*" />
+
+            <icon density="ldpi" src="www/img/icon/icon36x36.png" />
+            <icon density="mdpi" src="www/img/icon/icon48x48.png" />
+            <icon density="hdpi" src="www/img/icon/icon72x72.png" />
+            <icon density="xhdpi" src="www/img/icon/icon96x96.png" />
         </platform>
 
         <platform name="ios">
+            <allow-intent href="itms:*" />
             <allow-intent href="itms-apps:*" />
+
+            <icon height="57" src="www/img/icon/icon57x57.png" width="57" />
+            <icon height="72" src="www/img/icon/icon72x72.png" width="72" />
+            <icon height="114" src="www/img/icon/icon57x57.png" width="114" />
+            <icon height="144" src="www/img/icon/icon72x72.png" width="144" />
         </platform>
     </widget>
